@@ -18,6 +18,8 @@ public class Ticket {
     private MovieSession movieSession;
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ShoppingCart shoppingCart;
 
     public Ticket() {
     }
@@ -53,5 +55,13 @@ public class Ticket {
                 + ", movieSession=" + movieSession
                 + ", user=" + user
                 + '}';
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 }
